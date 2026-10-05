@@ -1,0 +1,10 @@
+.Renviron
+.Rlibrary/
+.Rhistory
+.RData
+.Rproj.user/
+renv/library/
+renv/staging/
+renv/cache/
+outputs/
+.DS_Store

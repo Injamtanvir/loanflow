@@ -1,0 +1,12 @@
+Package: loanflow
+Title: Synthetic SME Application Operations Dashboard
+Version: 1.0.1
+Authors@R: person("Injam", "Ul Haque", role = c("aut", "cre"), email = "example@example.com")
+Description: Independent educational R Shiny project with auditable application-grain KPIs,
+    event quality checks, PostgreSQL snapshots and a controlled join-fanout regression fixture.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.3.0)
+Imports: shiny (>= 1.8.0), dplyr (>= 1.1.4), ggplot2 (>= 3.4.4), DT (>= 0.31),
+    DBI (>= 1.2.0), RPostgres (>= 1.4.0), jsonlite (>= 1.8.8), digest (>= 0.6.33)
+Suggests: testthat (>= 3.2.0), renv

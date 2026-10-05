@@ -1,0 +1,10 @@
+source("scripts/runtime.R")
+loanflow_check_r()
+loanflow_use_library()
+source("R/config.R"); source("R/generate.R")
+args <- commandArgs(trailingOnly = TRUE)
+destination <- if (length(args)) args[1] else "data/demo"
+if (dir.exists(destination) && length(list.files(destination))) stop("Destination is not empty. Choose a new folder to preserve the bundled reference data.")
+raw <- generate_demo()
+write_demo(raw, destination)
+cat("Wrote", nrow(raw$applications), "raw application rows and", nrow(raw$events), "event rows to", destination, "\n")

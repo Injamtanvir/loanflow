@@ -1,0 +1,5 @@
+source("scripts/runtime.R")
+loanflow_check_r()
+loanflow_use_library()
+library(testthat)
+test_dir("tests/testthat", reporter = "summary", stop_on_failure = TRUE)

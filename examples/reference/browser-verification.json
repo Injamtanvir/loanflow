@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "checks": [
+    "date range",
+    "branch/product/stage combination",
+    "all tabs",
+    "filtered CSV download",
+    "reset filters",
+    "manual refresh timestamp",
+    "desktop layout",
+    "mobile width",
+    "no JavaScript/render errors"
+  ],
+  "expected": {
+    "all": 4988,
+    "august": 1676,
+    "branch": 837,
+    "filtered": 89
+  },
+  "pageErrors": [],
+  "outputErrors": [],
+  "width": {
+    "viewport": 390,
+    "body": 390
+  }
+}

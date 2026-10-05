@@ -1,0 +1,15 @@
+{
+  "source_snapshot_sha256": "2eeecce37f8503094842900b708233a308a449c0d9f0f026bdef6b5a21cd7b8d",
+  "output_sha256": {
+    "application_snapshot.csv": "c4023c266ce769e27e4940bfa130f13231c25e1fb5551a10abb43142bd10ed13",
+    "application_volume.png": "c4dd4445e6f7ce2d6354676048cf13cd3e467b8666563f5ecf947e73ede575f1",
+    "department_kpis.csv": "8a05ee703b20f32cd5b757ea34e8c547f141d836d0f2b686423e69871d2a2ff1",
+    "department_turnaround.png": "60252945f7fc6654f05f5c0e5abf3a0649462b12e4353ea5b1b898a647f74ff1",
+    "fanout_reconciliation.csv": "6bd2e2d45fd3a313abb350029205ee4a46e29df3c5afbd48d858ec752258faa6",
+    "quality_issues.csv": "be92531b680a40c837a4e0405877c1f3d13cbe6897b7b9ca5cff2e772c72ed09",
+    "reconciliation.csv": "122708a79a1e5ddf871d42308cd52bf93ebf549f4518c0e0c617e6898171b8ca",
+    "REPORT.md": "8e85710debd3416440c494760818dd685be9ef525e0d7723edcc316952074bd4",
+    "session_info.txt": "d363d0b712c7a8ef56ae889fa67028426d28a1c5742b183e322030919b1482f8",
+    "summary.json": "3d447bdc4b65fb292eb12171557cf4547055a861435d6ef801d8f64701c6e860"
+  }
+}

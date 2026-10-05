@@ -1,0 +1,7 @@
+source("scripts/runtime.R")
+loanflow_check_r()
+loanflow_use_library()
+library(shiny)
+for (file in c("config", "quality", "metrics", "source", "plots", "ui", "server")) source(file.path("R", paste0(file, ".R")), local = TRUE)
+if (file.exists(".Renviron")) readRenviron(".Renviron")
+shinyApp(ui = loanflow_ui(), server = make_server())

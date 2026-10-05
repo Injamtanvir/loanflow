@@ -1,0 +1,7 @@
+if (!file.exists("app.R")) stop("Run from the loanflow project folder")
+source("scripts/runtime.R")
+loanflow_check_r()
+loanflow_use_library()
+if (!requireNamespace("shiny", quietly = TRUE)) stop("Run bash scripts/r.sh scripts/setup.R first")
+port <- as.integer(Sys.getenv("LOANFLOW_PORT", "3838"))
+shiny::runApp(".", host = "127.0.0.1", port = port, launch.browser = interactive())

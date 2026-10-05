@@ -1,0 +1,16 @@
+test_that("PostgreSQL round trip preserves dirty raw data and refuses conflicting overwrite", {
+  skip_if(Sys.getenv("LOANFLOW_TEST_POSTGRES") != "1", "Set LOANFLOW_TEST_POSTGRES=1 for live database tests")
+  con <- connect_postgres(); on.exit(DBI::dbDisconnect(con), add = TRUE)
+  raw <- generate_demo(120L, dirty = TRUE)
+  raw$metadata$snapshot_id <- paste0("test-", Sys.getpid(), "-", format(Sys.time(), "%Y%m%d%H%M%OS6"))
+  schema <- file.path(PROJECT_ROOT, "sql/schema.sql")
+  upload_snapshot(raw, con, schema); upload_snapshot(raw, con, schema)
+  read <- read_postgres_snapshot(con, raw$metadata$snapshot_id)
+  expect_equal(nrow(read$applications), nrow(raw$applications))
+  expect_equal(nrow(read$events), nrow(raw$events))
+  expect_equal(snapshot_hash(read), snapshot_hash(raw))
+  expect_equal(application_snapshot(prepare_snapshot(read)), application_snapshot(prepare_snapshot(raw)))
+  raw$applications$branch[20] <- "Changed"
+  expect_error(upload_snapshot(raw, con, schema), "different content")
+  expect_equal(snapshot_hash(read_postgres_snapshot(con, raw$metadata$snapshot_id)), snapshot_hash(read))
+})
